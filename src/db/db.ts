@@ -1,6 +1,6 @@
 import mysql from 'mysql2/promise';
 
-export const pool = mysql.createPool('mysql://mysql:yME8iiw1kLeYpF2hqrDDVSzgeXU9G8A1ftjOYNBsIY0meQbR0iMIEpUMM191RFQ2@5.161.238.166:5433/default');
+export const pool = mysql.createPool(process.env.DATABASE_URL || '');
 
 // Inicializa a tabela caso não exista
 await pool.query(`
